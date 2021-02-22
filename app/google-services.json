@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50491708242",
+    "project_id": "drowsiness-detection-sys-4d5ae",
+    "storage_bucket": "drowsiness-detection-sys-4d5ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50491708242:android:b574eb2b28178ed28ca08b",
+        "android_client_info": {
+          "package_name": "com.example.drowsinessdetectionsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50491708242-875oibuju03evkv2levqk5ncbo8q8fen.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4NE2xV6h1sgH-pGRCbxqBax1smOS1Ljw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50491708242-875oibuju03evkv2levqk5ncbo8q8fen.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

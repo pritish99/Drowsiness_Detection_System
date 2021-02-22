@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPageActivity"
+    android:background="@drawable/default_background">
+
+    <TextView
+        android:id="@+id/user_name_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70sp"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:text="Welcome"/>
+
+    <ImageButton
+        android:id="@+id/signout_button"
+        android:layout_width="100sp"
+        android:layout_height="25sp"
+        android:background="@drawable/signout_selector"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10sp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/user_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150sp"
+        android:text="Account details"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/alert_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40sp"
+        android:layout_below="@id/user_details"
+        android:text="Alert Settings"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/camera_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/alert_settings"
+        android:layout_marginTop="50sp"
+        android:text="Front Camera"
+        app:switchPadding="20sp"
+        android:switchMinWidth="100sp"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:theme="@style/SCBSwitch"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_monitoring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:text="Start Monitoring"
+        android:textColor="@color/black"
+        android:layout_below="@id/camera_switch"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+
+
+
+
+</RelativeLayout>

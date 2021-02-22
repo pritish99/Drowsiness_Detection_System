@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetailsActivity"
+    android:background="@drawable/default_background">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:padding="10sp"
+        android:text="User Details"/>
+
+    <ImageButton
+        android:id="@+id/left_arrow_user_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/left_arrow_selector"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10sp"
+        />
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_below="@id/header"
+        android:layout_marginTop="50sp"
+        />
+    <TextView
+        android:id="@+id/name_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_marginLeft="70sp"
+        android:layout_below="@id/header"
+        android:layout_marginTop="50sp"
+        />
+
+    <TextView
+        android:id="@+id/age_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Age:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_below="@id/name_holder"
+        android:layout_marginTop="50sp"
+        />
+    <TextView
+        android:id="@+id/age_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_marginLeft="50sp"
+        android:layout_below="@id/name_holder"
+        android:layout_marginTop="50sp"
+        />
+
+    <TextView
+        android:id="@+id/emergency_contact_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emergency Contact:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_below="@id/age_holder"
+        android:layout_marginTop="50sp"
+        />
+    <TextView
+        android:id="@+id/emergency_contact_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_marginLeft="190sp"
+        android:layout_below="@id/age_holder"
+        android:layout_marginTop="50sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Details"
+        android:background="@drawable/button_selector"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/emergency_contact_holder"
+        android:layout_marginTop="50sp"
+        />
+
+</RelativeLayout>
