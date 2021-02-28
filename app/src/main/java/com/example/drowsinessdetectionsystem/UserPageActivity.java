@@ -1,12 +1,14 @@
 package com.example.drowsinessdetectionsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -21,6 +23,8 @@ public class UserPageActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     ImageButton signout_button;
     Button user_details,start_monitoring;
+    SwitchCompat cameraSwitch;
+    String useCamera="Front Camera";;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,25 @@ public class UserPageActivity extends AppCompatActivity {
         progressDialog = new SpotsDialog(this, R.style.Custom);
         start_monitoring=findViewById(R.id.start_monitoring);
         signout_button=findViewById(R.id.signout_button);
+        cameraSwitch=findViewById(R.id.camera_switch);
         user_details=findViewById(R.id.user_details);
+
+        cameraSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    cameraSwitch.setText("Front Camera");
+                    useCamera="Front Camera";
+                }
+                else{
+                    cameraSwitch.setText("Rear Camera");
+                    useCamera="Rear Camera";
+
+                }
+            }
+        });
+
+
 
         user_details.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +73,9 @@ public class UserPageActivity extends AppCompatActivity {
         start_monitoring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MonitoringActivity.class));
+                Intent intent1=new Intent(getApplicationContext(),MonitoringActivity.class);
+                intent1.putExtra("Camera",useCamera);
+                startActivity(intent1);
             }
         });
     }

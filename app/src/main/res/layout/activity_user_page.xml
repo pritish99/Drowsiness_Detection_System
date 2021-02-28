@@ -9,12 +9,16 @@
 
     <TextView
         android:id="@+id/user_name_holder"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70sp"
+        android:layout_marginTop="60sp"
         android:textSize="25sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:background="@color/bright_orange"
+        android:textAlignment="center"
+        android:padding="15sp"
+        android:textStyle="bold"
         android:text="Welcome"/>
 
     <ImageButton
@@ -34,7 +38,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150sp"
+        android:layout_marginTop="200sp"
         android:text="Account details"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -61,13 +65,17 @@
         android:layout_below="@id/alert_settings"
         android:layout_marginTop="50sp"
         android:text="Front Camera"
-        app:switchPadding="20sp"
+        android:textOff="Rear Camera"
+        android:textOn="Front Camera"
+        android:background="@drawable/b1"
+        android:padding="11sp"
         android:switchMinWidth="100sp"
-        android:textSize="25sp"
-        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textAlignment="center"
         android:theme="@style/SCBSwitch"
+        android:checked="true"
         />
 
     <androidx.appcompat.widget.AppCompatButton

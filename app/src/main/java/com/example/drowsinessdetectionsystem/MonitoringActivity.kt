@@ -18,12 +18,14 @@ import java.util.concurrent.ExecutorService
 class MonitoringActivity : AppCompatActivity() {
 
 
+    var useCamera:String="Front Camera"
     private lateinit var cameraExecutor: ExecutorService
-
+    //var useCamera:String = intent.getStringExtra("Camera").toString()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitoring)
-
+        val bundle: Bundle? = intent.extras
+        useCamera= bundle?.get("Camera").toString()
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -56,15 +58,22 @@ class MonitoringActivity : AppCompatActivity() {
                     it.setAnalyzer(cameraExecutor,EyeDetectorAnalyzer(eyestatus))
                 }
 
-
+            var cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
             // Select back camera as a default
-            val cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
+            if (useCamera.equals("Front Camera")){
+                cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
+            }
+            else{
+                cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+            }
+
 
             try {
                 // Unbind use cases before rebinding
                 cameraProvider.unbindAll()
 
                 // Bind use cases to camera
+
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview,imageAnalyzer)
 
