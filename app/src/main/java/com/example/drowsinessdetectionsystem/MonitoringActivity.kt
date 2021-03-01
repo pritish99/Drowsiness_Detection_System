@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.Manifest
 import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -17,7 +18,7 @@ import java.util.concurrent.ExecutorService
 
 class MonitoringActivity : AppCompatActivity() {
 
-
+    var buzzer:MediaPlayer = MediaPlayer()
     var useCamera:String="Front Camera"
     private lateinit var cameraExecutor: ExecutorService
     //var useCamera:String = intent.getStringExtra("Camera").toString()
@@ -25,6 +26,7 @@ class MonitoringActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitoring)
         val bundle: Bundle? = intent.extras
+        buzzer=MediaPlayer.create(this,R.raw.buzzersound)
         useCamera= bundle?.get("Camera").toString()
 
         // Request camera permissions
@@ -55,7 +57,7 @@ class MonitoringActivity : AppCompatActivity() {
             val imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
-                    it.setAnalyzer(cameraExecutor,EyeDetectorAnalyzer(eyestatus))
+                    it.setAnalyzer(cameraExecutor,EyeDetectorAnalyzer(eyestatus,buzzer))
                 }
 
             var cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA

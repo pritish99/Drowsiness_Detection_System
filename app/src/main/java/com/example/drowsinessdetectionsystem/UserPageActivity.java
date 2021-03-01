@@ -1,20 +1,16 @@
 package com.example.drowsinessdetectionsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import dmax.dialog.SpotsDialog;
 
 public class UserPageActivity extends AppCompatActivity {
@@ -24,7 +20,8 @@ public class UserPageActivity extends AppCompatActivity {
     ImageButton signout_button;
     Button user_details,start_monitoring;
     SwitchCompat cameraSwitch;
-    String useCamera="Front Camera";;
+    String useCamera="Front Camera";
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,48 +34,35 @@ public class UserPageActivity extends AppCompatActivity {
         cameraSwitch=findViewById(R.id.camera_switch);
         user_details=findViewById(R.id.user_details);
 
-        cameraSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    cameraSwitch.setText("Front Camera");
-                    useCamera="Front Camera";
-                }
-                else{
-                    cameraSwitch.setText("Rear Camera");
-                    useCamera="Rear Camera";
+        cameraSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked){
+                cameraSwitch.setText("Front Camera");
+                useCamera="Front Camera";
+            }
+            else{
+                cameraSwitch.setText("Rear Camera");
+                useCamera="Rear Camera";
 
-                }
             }
         });
 
 
 
-        user_details.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),UserDetailsActivity.class));
-            }
+        user_details.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),UserDetailsActivity.class)));
+
+        signout_button.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+            finish();
         });
 
-        signout_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-                finish();
-            }
-        });
-
-        start_monitoring.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1=new Intent(getApplicationContext(),MonitoringActivity.class);
-                intent1.putExtra("Camera",useCamera);
-                startActivity(intent1);
-            }
+        start_monitoring.setOnClickListener(v -> {
+            Intent intent1=new Intent(getApplicationContext(),MonitoringActivity.class);
+            intent1.putExtra("Camera",useCamera);
+            startActivity(intent1);
         });
     }
+    @SuppressLint("SetTextI18n")
     @Override
     public void onStart() {
         super.onStart();
