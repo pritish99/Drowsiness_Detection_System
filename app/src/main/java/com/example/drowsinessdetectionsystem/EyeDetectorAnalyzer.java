@@ -66,7 +66,7 @@ public class EyeDetectorAnalyzer implements ImageAnalysis.Analyzer {
                                                     startThread();
                                                     if(showEyesClose){
                                                         textview1.setText("Eyes Close");
-                                                        buzzer.start();
+
                                                     }
                                                 }
                                             }
@@ -106,7 +106,7 @@ public class EyeDetectorAnalyzer implements ImageAnalysis.Analyzer {
                 if(i==count-1){
                     startThread=true;
                     showEyesClose=true;
-
+                    buzzer.start();
                     return;
                 }
                 Log.i("Thread Count","Count:"+i);
