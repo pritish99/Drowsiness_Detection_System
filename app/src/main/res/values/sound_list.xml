@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sounds_array">
+        <item>Buzzer</item>
+        <item>Alarm</item>
+        <item>Male Voice</item>
+    </string-array>
+
+</resources>

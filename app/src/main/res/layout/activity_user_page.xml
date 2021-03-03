@@ -44,18 +44,27 @@
         android:textSize="15sp"
         android:textStyle="bold"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Spinner
         android:id="@+id/alert_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
+        android:background="@drawable/b1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp"
         android:layout_below="@id/user_details"
-        android:text="Alert Settings"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:gravity="center"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/play_sound_button"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        android:background="@drawable/ic_baseline_play_arrow_24"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/user_details"
+        android:layout_marginTop="39sp"
+        android:layout_marginRight="40sp"
+        />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/camera_switch"
